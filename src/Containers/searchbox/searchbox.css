@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  line-height: 1.618;
+}
+
+:root {
+  --brand-foreground: #4ca95d;
+  --brand-darkened: #3d4a3e;
+  --brand-greyed: #a0afa0;
+  --accent: #1063bc;
+  --accent-light: #1063bc;
+  --white: #ffffff;
+  --black: #000000;
+  --drop-shadow-content: 0px 7px 6px -4px rgba(0, 0, 0, 0.25);
+  --z-auto: auto;
+  --z-1: 1;
+  --z-2: 2;
+  --backdrop-z: var(--z-1);
+  --overlay-z: var(--z-2);
+}
+
+
+.site-search {
+  background-color: var(--brand-greyed);
+  padding: 3rem 1rem 10rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: var(--z-1);
+  margin-top:2rem;
+}
+
+.site-search::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -5rem;
+  transform: translateX(-50%);
+  width: 70vw;
+  
+  height: 14rem;
+  background-image: url("../../assets/img/people-moving.svg");
+  background-repeat: no-repeat;
+  background-size: 70vw 14rem;
+  z-index: -1;
+}
+
+.site-search h1 {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.site-search .input--search {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--brand-darkened);
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  background-color: var(--white);
+ 
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: left 0.5rem center;
+  font-size: 1rem;
+}
+
+.site-search > .search-container .search-close {
+  display: none;
+}
+
+.site-search > .search-container.is--focused {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+.site-search > .search-container.is--focused .input--search {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  box-shadow: unset;
+  background-image: unset;
+}
+
+.site-search > .search-container.is--focused .search-close {
+  display: block;
+  position: absolute;
+  top: 1.75rem;
+  left: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  border: 0;
+  background-color: transparent;
+ 
+  background-size: cover;
+}
+
+
+/* Tablet & Up */
+@media screen and (min-width: 48rem) {
+  
+  .site-search {
+    padding: 3rem;
+  }
+
+  .site-search h1 {
+    text-align: left;
+  }
+
+
+}
+
+
